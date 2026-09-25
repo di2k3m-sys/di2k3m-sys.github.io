@@ -21,3 +21,91 @@ section {
 #gallery .row > * {
   padding: 0;
 }
+
+/* Our Photos Section */
+.photos-box {
+  position: relative;
+  background-color: #0d6efd;
+  border-radius: 10px;
+  height: 500px;
+  transform-style: preserve-3d;
+}
+.photos-box::before {
+  content: "OUR";
+  position: absolute;
+  color: #fff;
+  font-size: 5em;
+  font-weight: bold;
+  font-style: italic;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.photos-box:hover::before {
+  opacity: 0.2;
+}
+
+.photos-box::after {
+  content: "PRODUCTS";
+  position: absolute;
+  color: #fff;
+  font-size: 4em;
+  font-weight: bold;
+  font-style: italic;
+  top: 350px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.photos-box:hover::after {
+  opacity: 0.2;
+}
+
+.photos-name {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+  opacity: 0;
+  transform: translate3d(0, 0, 50px);
+  transition: 0.5s;
+}
+.photos-box:hover .photos-name {
+  top: 20px;
+  opacity: 1;
+}
+
+.photos-detail-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate3d(-50%, 0, 100px);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.photos-box:hover .photos-detail-button {
+  opacity: 1;
+  bottom: 20px;
+}
+
+.photos-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -52%, 80px);
+  max-height: 200px;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.photos-box:hover .photos-img {
+  transform: translate3d(-50%, -52%, 80px) rotate(5deg) scale(1.2);
+}
